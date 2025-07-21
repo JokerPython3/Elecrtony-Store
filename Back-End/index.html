@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Store</title>
+  <link rel="stylesheet" href="styl.css" />
+</head>
+<body>
+  <header class="navbar">
+    <div class="logo">MyStore</div>
+    <nav>
+      <a href="/">Home</a>
+      <a href="/items">Items</a>
+    </nav>
+    <div class="search-box">
+      <input type="text" placeholder="Search products..." />
+      <button>Search</button>
+    </div>
+  </header>
+
+  <main>
+    <p style="text-align:center; padding-top:50px;">Welcome to the store</p>
+    <section id="product-list" class="product-list"></section>
+  </main>
+
+  <div class="add">
+    <button class="add-button" onclick="openModal()">+</button>
+  </div>
+
+  <div class="modal" id="addProductModal">
+    <div class="modal-content">
+      <span class="close" onclick="closeModal()">&times;</span>
+      <h2>Add New Product</h2>
+      <form action="/add" method="POST" enctype="multipart/form-data">
+        <input type="text" name="name" placeholder="Product Name" required />
+        <textarea name="des" placeholder="Product Description" required></textarea>
+        <input type="number" name="price" placeholder="Product Price ($)" required />
+        <input type="file" name="image" accept="image/*" />
+        <button type="submit">Add Product</button>
+</form>
+
+
+  <script src="w.js"></script>
+</body>
+</html>
